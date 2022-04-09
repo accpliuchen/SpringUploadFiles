@@ -15,7 +15,7 @@ git clone https://github.com/accpliuchen/SpringUploadFiles.git
 Open `src/main/resources/application.properties` file and change the property `file.upload-dir` to the path where you want the uploaded files to be stored.
 
 ```
-file.upload-dir=/Users/callicoder/uploads
+file.upload-dir=/Users/uploads
 ```
 
 **2. Run the app using maven**
