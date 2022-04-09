@@ -21,7 +21,7 @@ file.upload-dir=/Users/uploads
 **2. Run the app using maven**
 
 ```bash
-cd spring-boot-file-upload-download-rest-api-example
+cd SpringUploadFiles
 mvn spring-boot:run
 ```
 
@@ -31,5 +31,5 @@ You may also package the application in the form of a jar and then run the jar f
 
 ```bash
 mvn clean package
-java -jar target/file-demo-0.0.1-SNAPSHOT.jar
+java -jar SpringUploadFiles-0.0.1-SNAPSHOT
 ```
