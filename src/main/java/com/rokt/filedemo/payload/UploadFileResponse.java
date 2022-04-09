@@ -7,6 +7,7 @@ public class UploadFileResponse {
     private String fileName;
     private String fileDownloadUri;
     private String fileType;
+    private String status;
     private long size;
 
     public UploadFileResponse(String fileName, String fileDownloadUri, String fileType, long size) {

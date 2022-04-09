@@ -1,5 +1,6 @@
 package com.rokt.filedemo.controller;
 
+import com.rokt.filedemo.entity.RequestForm;
 import com.rokt.filedemo.payload.UploadFileResponse;
 import com.rokt.filedemo.service.FileStorageService;
 import org.slf4j.Logger;
@@ -28,10 +29,9 @@ public class UploadFilesController {
     @Autowired
     private FileStorageService fileStorageService;
 
-    @RequestMapping("/")
-    public UploadFileResponse uploadFile(@RequestParam(value = "file", required = false) MultipartFile file, @RequestParam String from,
-                                         @RequestParam String to) {
-        String fileName = fileStorageService.storeFile(file,from,to);
+    @PostMapping("/")
+    public UploadFileResponse uploadFile(RequestForm forms) {
+        String fileName = fileStorageService.storeFile(forms.getFile(),forms.getFrom(),forms.getTo());
 
         String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path("/downloadFile/")
@@ -39,7 +39,7 @@ public class UploadFilesController {
                 .toUriString();
 
         return new UploadFileResponse(fileName, fileDownloadUri,
-                file.getContentType(), file.getSize());
+                forms.getFile().getContentType(), forms.getFile().getSize());
     }
 
     @PostMapping("/uploadFile")
@@ -78,7 +78,7 @@ public class UploadFilesController {
 
         // Fallback to the default content type if type could not be determined
         if(contentType == null) {
-            contentType = "application/octet-stream";
+            contentType = "application/json";
         }
 
         return ResponseEntity.ok()
