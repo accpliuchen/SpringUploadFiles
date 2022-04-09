@@ -1,0 +1,54 @@
+{
+	"info": {
+		"_postman_id": "b284c336-a766-4dc8-b6d9-f911b0785648",
+		"name": "Rokt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Fokt Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/E:/sample1.txt"
+						},
+						{
+							"key": "from",
+							"value": "2000-01-02T20:59:05Z",
+							"type": "text"
+						},
+						{
+							"key": "to",
+							"value": "2000-01-26T18:29:52Z",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8279/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8279",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
