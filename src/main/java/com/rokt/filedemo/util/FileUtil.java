@@ -29,17 +29,21 @@ public class FileUtil {
             String str = br.readLine();
 
             while(str!=null){
-                String[] arr=str.split(" ");
 
-                Date eventTime=df.parse(arr[0]);
+                if(!str.equals("null")) {
 
-                if(fromDate.compareTo(eventTime) * eventTime.compareTo(toDate) >= 0) {
-                    Rokt bean = new Rokt(df.format(eventTime),arr[1],arr[2]);
-                    list.add(bean);
+                    String[] arr = str.split(" ");
+
+                    Date eventTime = df.parse(arr[0]);
+
+                    if (fromDate.compareTo(eventTime) * eventTime.compareTo(toDate) >= 0) {
+                        Rokt bean = new Rokt(df.format(eventTime), arr[1], arr[2]);
+                        list.add(bean);
+                    }
+
                 }
-
                 str = br.readLine();
-            }
+              }
 
             //order eventtime
             Collections.sort(list, new Comparator<Rokt>() {
