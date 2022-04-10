@@ -26,6 +26,7 @@ mvn spring-boot:run
 ```
 
 That's it! The application can be accessed at `http://localhost:8279`.
+or access `http://localhost:8279/index.html`.
 
 You may also package the application in the form of a jar and then run the jar file like so -
 
